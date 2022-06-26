@@ -1,8 +1,8 @@
-
-
-  <script src="https://eastgwillimbury.my.salesforce.com/lightning/lightning.out.js"></script>
+<script src="https://eastgwillimbury.force.com/outservice/lightning/lightning.out.js"></script>
 
 <script>
+debugger;
+console.log("done");
 
     $Lightning.use("c:LightningOut",    // name of the Lightning app
         function() {                  // Callback once framework and app loaded
@@ -15,15 +15,14 @@
                 }
             );
         },
-        'https://eastgwillimbury.my.salesforce.com/'  // Site endpoint
+        'https://eastgwillimbury.lightning.force.com'  // Site endpoint
     );
 </script>
+
 
 <div>
 Embeded Code
 </div>
-<h1>Lightning Out<h1>
-
 <div id="lightningLocator">
   
 </div>
