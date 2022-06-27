@@ -1,28 +1,28 @@
 <script src="https://eastgwillimbury.force.com/outservice/lightning/lightning.out.js"></script>
 
 <script>
-debugger;
-console.log("done");
-
-    $Lightning.use("c:LightningOut",    // name of the Lightning app
-        function() {                  // Callback once framework and app loaded
-            $Lightning.createComponent(
-                "c:LightningOut",
-                { },                  
-                "lightningLocator",
-                function(cmp) {
-                   
-                }
-            );
-        },
-        'https://eastgwillimbury.lightning.force.com'  // Site endpoint
-    );
+    
+    var comp = "c:MP_LO"; // c:MP_ArticlePageCallToAction.  // c:MP_LO
+        console.log("START : " + comp);
+        $Lightning.use(
+            comp + "App", 
+            function() {
+                console.log("CREATING : " + comp);
+                $Lightning.createComponent (
+                    comp,
+                    {'recordId':'ka08c000001XNSCAA4'},                     
+                    'lightning',
+                    function(cmp) {}
+                );
+            }
+            , "https://eastgwillimbury.force.com/outservice"
+        );
 </script>
 
 
 <div>
 Embeded Code
 </div>
-<div id="lightningLocator">
+<div id="lightning">
   
 </div>
