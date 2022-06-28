@@ -1,38 +1,26 @@
 <script src="https://eastgwillimbury.force.com/outservice/lightning/lightning.out.js"></script>
-
 <script>
-
-	function buttonClick(){
-		let Link = document.getElementById('Link').value;
-		//ExecuteLightning(Link);
-	}
+    
+   var comp = "c:LightningOut"; // c:MP_ArticlePageCallToAction.  // c:MP_LO
+        console.log("START : " + comp);
+        $Lightning.use(
+            comp + "App", 
+            function() {
+                console.log("CREATING : " + comp);
+                $Lightning.createComponent (
+                    "c:mP_CallToAction",
+                    { recordId : '000001016' },
+                    'lightning',
+                    function(cmp) {
+                        console.log(cmp);
+                    }
+                );
+            }
+            , "https://eastgwillimbury.force.com/outservice"
+        );
 </script>
-
-<script>	
-   
-		var comp = "c:LightningOut"; // c:MP_ArticlePageCallToAction.  // c:MP_LO
-        	console.log("START : " + comp);
-        	$Lightning.use(
-            		comp + "App", 
-           		 function() {
-                		console.log("CREATING : " + comp);
-               			$Lightning.createComponent (
-                    		"c:mP_CallToAction",
-                    		{ recordId : "Water Service" },
-				'lightning',
-                    		function(cmp) {
-                        	console.log(cmp);
-                    		});
-			}
-            	, "https://eastgwillimbury.force.com/outservice");
-</script>
-
-
 <div>
 Embeded Code
-
-	<input type="text" id="Link" value="Water Service">
-	<button label="submit" onclick="buttonClick()">submit</button>
 </div>
 <div id="lightning">
   
