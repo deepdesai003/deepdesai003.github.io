@@ -6,35 +6,34 @@
 		let Link = document.getElementById('Link').value;
 		ExecuteLightning(Link);
 	}
+	
 	function ExecuteLightning(link) {
    
 		var comp = "c:LightningOut"; // c:MP_ArticlePageCallToAction.  // c:MP_LO
-        console.log("START : " + comp);
-        $Lightning.use(
-            comp + "App", 
-            function() {
-                console.log("CREATING : " + comp);
-                $Lightning.createComponent (
-                    "c:mP_CallToAction",
-                    { externalKnowledgeLink: link , language : 'en_US' },
-                    'lightning',
-                    function(cmp) {
-                        console.log(cmp);
-                    }
-                );
-            }
-            , "https://eastgwillimbury.force.com/outservice"
-        );
+        	console.log("START : " + comp);
+        	$Lightning.use(
+            		comp + "App", 
+           		 function() {
+                		console.log("CREATING : " + comp);
+               			$Lightning.createComponent (
+                    		"c:mP_CallToAction",
+                    		{ externalKnowledgeLink: link , language : 'en_US' },
+				'lightning',
+                    		function(cmp) {
+                        	console.log(cmp);
+                    		});
+			}
+            	, "https://eastgwillimbury.force.com/outservice");
 	}
 </script>
 
 
 <div>
 Embeded Code
-</div>
+
 	<input type="text" id="Link" value="Water Service">
 	<button label="submit" onclick="buttonClick()">submit</button>
-
+</div>
 <div id="lightning">
   
 </div>
